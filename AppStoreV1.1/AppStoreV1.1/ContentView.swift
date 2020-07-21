@@ -11,6 +11,19 @@ import SwiftUI
 class BaseTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let redVC = UIViewController()
+        redVC.view.backgroundColor = .systemRed
+        redVC.tabBarItem.title = "Red"
+        
+        let blueVC = UIViewController()
+        blueVC.view.backgroundColor = .systemBlue
+        blueVC.tabBarItem.title = "Blue"
+        
+        viewControllers = [
+            redVC,
+            blueVC
+        ]
     }
 }
 
