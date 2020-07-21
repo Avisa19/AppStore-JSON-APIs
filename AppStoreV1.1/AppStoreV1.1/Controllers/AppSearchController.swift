@@ -15,7 +15,7 @@ class AppSearchController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = UIColor.init(white: 0.5, alpha: 0.1)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: CELL_ID)
+        collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: CELL_ID)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -23,8 +23,7 @@ class AppSearchController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_ID, for: indexPath)
-        cell.backgroundColor = .systemRed
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_ID, for: indexPath) as! SearchResultCell
         return cell
     }
     
