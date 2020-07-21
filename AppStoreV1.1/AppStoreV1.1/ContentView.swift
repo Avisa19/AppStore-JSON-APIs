@@ -17,12 +17,14 @@ class BaseTabBarController: UITabBarController {
         let redNav = UINavigationController(rootViewController: redVC)
         redNav.tabBarItem.title = "Red"
         redVC.navigationItem.title = "Apps"
+        redNav.navigationBar.prefersLargeTitles = true
         
         let blueVC = UIViewController()
         blueVC.view.backgroundColor = .systemBlue
         let blueNav = UINavigationController(rootViewController: blueVC)
         blueNav.tabBarItem.title = "Blue"
         blueVC.navigationItem.title = "Search"
+        blueNav.navigationBar.prefersLargeTitles = true
         
         viewControllers = [
             redNav,
