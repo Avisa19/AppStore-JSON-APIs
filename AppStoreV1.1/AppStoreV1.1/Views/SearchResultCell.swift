@@ -10,30 +10,45 @@ import SwiftUI
 
 class SearchResultCell: UICollectionViewCell {
     
-    fileprivate let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = .systemTeal
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+    fileprivate let imageView = ASImageView()
     
-    fileprivate let nameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Apps Name"
-        return label
-    }()
+    fileprivate let nameLabel = ASLabel(title: "Apps Name")
     
-    fileprivate let getButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("GET", for: .normal)
-        button.setTitleColor(UIColor.systemBlue, for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        return button
-    }()
+    fileprivate let categoryLabel = ASLabel(title: "Photos & Videos")
+    
+    fileprivate let ratingLabel = ASLabel(title: "9.26M")
+    
+    fileprivate let getButton = ASButton(title: "GET")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .systemGreen
+        setupViews()
+    }
+    
+    fileprivate func setupViews() {
+        
+        let verticalStack = UIStackView(arrangedSubviews: [
+            nameLabel,
+            categoryLabel,
+            ratingLabel
+        ])
+        verticalStack.axis = .vertical
+        verticalStack.spacing = 4
+        
+        let stackView = UIStackView(arrangedSubviews: [
+            imageView, verticalStack, getButton
+        ])
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(stackView)
+        
+        stackView.spacing = 12
+        
+        
+        stackView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
     
     required init?(coder: NSCoder) {
