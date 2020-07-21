@@ -14,15 +14,18 @@ class BaseTabBarController: UITabBarController {
         
         let redVC = UIViewController()
         redVC.view.backgroundColor = .systemRed
-        redVC.tabBarItem.title = "Red"
+        let redNav = UINavigationController(rootViewController: redVC)
+        redNav.tabBarItem.title = "Red"
+        
         
         let blueVC = UIViewController()
         blueVC.view.backgroundColor = .systemBlue
-        blueVC.tabBarItem.title = "Blue"
+        let blueNav = UINavigationController(rootViewController: blueVC)
+        blueNav.tabBarItem.title = "Blue"
         
         viewControllers = [
-            redVC,
-            blueVC
+            redNav,
+            blueNav
         ]
     }
 }
