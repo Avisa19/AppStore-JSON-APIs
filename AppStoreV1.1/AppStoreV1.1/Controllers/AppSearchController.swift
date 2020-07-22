@@ -16,7 +16,10 @@ class AppSearchController: UICollectionViewController {
         super.viewDidLoad()
         collectionView.backgroundColor = UIColor.init(white: 0.5, alpha: 0.1)
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: CELL_ID)
+        // Fetch Data from URL
+        NetworkService.shared.fetchiTunesApps()
     }
+    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 7
@@ -24,6 +27,7 @@ class AppSearchController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_ID, for: indexPath) as! SearchResultCell
+        
         return cell
     }
     

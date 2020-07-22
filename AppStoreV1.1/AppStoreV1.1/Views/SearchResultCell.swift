@@ -10,6 +10,7 @@ import SwiftUI
 
 class SearchResultCell: UICollectionViewCell {
     
+    
     fileprivate let iconImageView = ASImageView()
     
     fileprivate let nameLabel = ASLabel(title: "Apps Name")
