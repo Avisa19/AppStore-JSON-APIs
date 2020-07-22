@@ -10,7 +10,7 @@ import SwiftUI
 
 class SearchResultCell: UICollectionViewCell {
     
-    fileprivate let imageView = ASImageView()
+    fileprivate let iconImageView = ASImageView()
     
     fileprivate let nameLabel = ASLabel(title: "Apps Name")
     
@@ -22,23 +22,31 @@ class SearchResultCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .systemGreen
+        backgroundColor = .white
         setupViews()
     }
     
     fileprivate func setupViews() {
         
-        let verticalStack = ASStackView(views: nameLabel, categoryLabel,
-            ratingLabel
-            , space: 4)
+        let lablesStackView = ASStackView(views: nameLabel, categoryLabel, ratingLabel)
+        lablesStackView.axis = .vertical
         
-        let horizontalStack = ASStackView(views: imageView, verticalStack, getButton, axis: .horizontal, space: 12)
+        let stackView = UIStackView(arrangedSubviews: [
+            iconImageView,
+            lablesStackView,
+            getButton
+        ])
         
-        addSubview(horizontalStack)
+        stackView.spacing = 12
+        stackView.alignment = .center
         
-        horizontalStack.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
-        horizontalStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
-        horizontalStack.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+      
     }
     
     required init?(coder: NSCoder) {

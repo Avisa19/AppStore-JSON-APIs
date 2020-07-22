@@ -10,7 +10,7 @@ import SwiftUI
 
 class ASStackView: UIStackView {
     
-    init(frame: CGRect = .zero, views: UIView..., axis: NSLayoutConstraint.Axis = .vertical, space: CGFloat = 8, distribution: UIStackView.Distribution = .fillProportionally) {
+    init(frame: CGRect = .zero, views: UIView..., axis: NSLayoutConstraint.Axis = .horizontal, space: CGFloat = 0, distribution: UIStackView.Distribution = .fillProportionally) {
         super.init(frame: frame)
         checkIfFrameZero()
         self.axis = axis

@@ -10,13 +10,14 @@ import SwiftUI
 
 class ASImageView: UIImageView {
     
-    init(frame: CGRect = .zero, contentMode: UIView.ContentMode = .scaleAspectFit, backColor: UIColor = .systemRed, width: CGFloat = 64) {
+    init(frame: CGRect = .zero, contentMode: UIView.ContentMode = .scaleAspectFit, backColor: UIColor = .systemRed, width: CGFloat = 64, cornerRadius: CGFloat = 12) {
         super.init(frame: frame)
         checkIfFrameZero()
         self.contentMode = contentMode
         self.backgroundColor = backColor
         self.widthAnchor.constraint(equalToConstant: width).isActive = true
-        self.heightAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        self.heightAnchor.constraint(equalToConstant: width).isActive = true
+        self.layer.cornerRadius = cornerRadius
     }
     
     required init?(coder: NSCoder) {
