@@ -20,32 +20,59 @@ class SearchResultCell: UICollectionViewCell {
     
     fileprivate let getButton = ASButton(title: "GET")
     
+    fileprivate lazy var screenShotOneImageView = self.createScreenShotImageView()
+    fileprivate lazy var screenShotTwoImageView = self.createScreenShotImageView()
+    fileprivate lazy var screenShotThreeImageView = self.createScreenShotImageView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
         setupViews()
     }
     
+    // create screenShot
+    func createScreenShotImageView() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .systemIndigo
+        return imageView
+    }
+    
     fileprivate func setupViews() {
         
         let lablesStackView = ASStackView(views: nameLabel, categoryLabel, ratingLabel)
-        lablesStackView.axis = .vertical
         
-        let stackView = UIStackView(arrangedSubviews: [
+        
+        let infoTopStackView = UIStackView(arrangedSubviews: [
             iconImageView,
             lablesStackView,
             getButton
         ])
         
-        stackView.spacing = 12
-        stackView.alignment = .center
+        infoTopStackView.spacing = 12
+        infoTopStackView.alignment = .center
         
-        addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        let screenShotsStack = UIStackView(arrangedSubviews: [
+            screenShotOneImageView, screenShotTwoImageView, screenShotThreeImageView
+        ])
+        screenShotsStack.axis = .horizontal
+        screenShotsStack.distribution = .fillEqually
+        screenShotsStack.spacing = 8
+        
+        let overallStack = UIStackView(arrangedSubviews: [
+            infoTopStackView,
+            screenShotsStack
+        ])
+        
+        overallStack.axis = .vertical
+        overallStack.spacing = 4
+        
+        addSubview(overallStack)
+        
+        overallStack.translatesAutoresizingMaskIntoConstraints = false
+        overallStack.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
+        overallStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+        overallStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+        overallStack.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
       
     }
     

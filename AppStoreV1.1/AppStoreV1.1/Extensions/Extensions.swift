@@ -9,6 +9,7 @@
 import SwiftUI
 
 extension UIView {
+    
     func checkIfFrameZero() {
         if self.frame == .zero {
             self.translatesAutoresizingMaskIntoConstraints = false
