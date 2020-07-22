@@ -10,15 +10,12 @@ import SwiftUI
 
 class ASStackView: UIStackView {
     
-    init(frame: CGRect = .zero, views: UIView..., axis: NSLayoutConstraint.Axis = .vertical, space: CGFloat = 0, distribution: UIStackView.Distribution = .fillProportionally) {
+    init(frame: CGRect = .zero, views: UIView..., axis: NSLayoutConstraint.Axis = .vertical, space: CGFloat = 0) {
         super.init(frame: frame)
         checkIfFrameZero()
         self.axis = axis
         self.spacing = space
-        self.distribution = distribution
-        for view in views {
-            self.addArrangedSubview(view)
-        }
+        views.forEach({addArrangedSubview($0)})
     }
     
     required init(coder: NSCoder) {

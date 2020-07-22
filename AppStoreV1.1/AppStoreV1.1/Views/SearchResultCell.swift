@@ -54,17 +54,13 @@ class SearchResultCell: UICollectionViewCell {
         let screenShotsStack = UIStackView(arrangedSubviews: [
             screenShotOneImageView, screenShotTwoImageView, screenShotThreeImageView
         ])
+        
         screenShotsStack.axis = .horizontal
         screenShotsStack.distribution = .fillEqually
         screenShotsStack.spacing = 8
         
-        let overallStack = UIStackView(arrangedSubviews: [
-            infoTopStackView,
-            screenShotsStack
-        ])
         
-        overallStack.axis = .vertical
-        overallStack.spacing = 4
+        let overallStack = ASStackView(views: infoTopStackView, screenShotsStack, space: 8)
         
         addSubview(overallStack)
         
@@ -72,7 +68,7 @@ class SearchResultCell: UICollectionViewCell {
         overallStack.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
         overallStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         overallStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
-        overallStack.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        overallStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
       
     }
     
