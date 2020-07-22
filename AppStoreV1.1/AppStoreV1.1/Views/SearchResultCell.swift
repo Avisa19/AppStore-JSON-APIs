@@ -28,27 +28,17 @@ class SearchResultCell: UICollectionViewCell {
     
     fileprivate func setupViews() {
         
-        let verticalStack = UIStackView(arrangedSubviews: [
-            nameLabel,
-            categoryLabel,
+        let verticalStack = ASStackView(views: nameLabel, categoryLabel,
             ratingLabel
-        ])
-        verticalStack.axis = .vertical
-        verticalStack.spacing = 4
+            , space: 4)
         
-        let stackView = UIStackView(arrangedSubviews: [
-            imageView, verticalStack, getButton
-        ])
+        let horizontalStack = ASStackView(views: imageView, verticalStack, getButton, axis: .horizontal, space: 12)
         
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(stackView)
+        addSubview(horizontalStack)
         
-        stackView.spacing = 12
-        
-        
-        stackView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        horizontalStack.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
+        horizontalStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
+        horizontalStack.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
     
     required init?(coder: NSCoder) {
