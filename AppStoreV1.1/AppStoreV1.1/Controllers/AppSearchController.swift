@@ -20,12 +20,14 @@ class AppSearchController: UICollectionViewController {
         
         setupViews()
         setupSearchBar()
-        fetchiTunesApp()
     }
     
     fileprivate func setupSearchBar() {
+        definesPresentationContext = true
         navigationItem.searchController = self.searchBarController
         navigationItem.hidesSearchBarWhenScrolling = false
+        searchBarController.obscuresBackgroundDuringPresentation = false
+        searchBarController.searchBar.delegate = self
     }
     
     fileprivate func setupViews() {
@@ -33,9 +35,9 @@ class AppSearchController: UICollectionViewController {
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: CELL_ID)
     }
     
-    fileprivate func fetchiTunesApp() {
+  /*  fileprivate func fetchiTunesApp() {
         // Fetch Data from URL
-        NetworkService.shared.fetchiTunesApps { (results, err) in
+        NetworkService.shared.fetchiTunesApps(searchTerm: "Twitter") { (results, err) in
             if let err = err {
                 print("Error fetch data:", err)
             }
@@ -46,7 +48,7 @@ class AppSearchController: UICollectionViewController {
             }
         }
     }
-    
+    */
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return appResult.count
@@ -75,6 +77,21 @@ extension AppSearchController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return .zero
+    }
+}
+
+extension AppSearchController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        NetworkService.shared.fetchiTunesApps(searchTerm: searchText) { (results, err) in
+            if let err = err {
+                print("Error fetch data:", err)
+            }
+            guard let appResults = results else { return }
+            self.appResult = appResults
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
     }
 }
 

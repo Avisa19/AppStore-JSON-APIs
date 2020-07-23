@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		8B76E9E724C7AC2E00B600E9 /* ASButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76E9E624C7AC2E00B600E9 /* ASButton.swift */; };
 		8B76E9EA24C7ADB900B600E9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76E9E924C7ADB900B600E9 /* Extensions.swift */; };
 		8B76E9EC24C7DC9400B600E9 /* ASStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76E9EB24C7DC9400B600E9 /* ASStackView.swift */; };
+		8BDF526724CA3E8700610BFA /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF526624CA3E8700610BFA /* BaseTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		8B76E9E624C7AC2E00B600E9 /* ASButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASButton.swift; sourceTree = "<group>"; };
 		8B76E9E924C7ADB900B600E9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8B76E9EB24C7DC9400B600E9 /* ASStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASStackView.swift; sourceTree = "<group>"; };
+		8BDF526624CA3E8700610BFA /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		ECE49B275ACB6FC3B7559D94 /* Pods-AppStoreV1.1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreV1.1.release.xcconfig"; path = "Target Support Files/Pods-AppStoreV1.1/Pods-AppStoreV1.1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				8B76E9DC24C78EDC00B600E9 /* AppSearchController.swift */,
+				8BDF526624CA3E8700610BFA /* BaseTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -163,7 +166,6 @@
 				72A2A68822A738A876B88F8C /* Pods-AppStoreV1.1.debug.xcconfig */,
 				ECE49B275ACB6FC3B7559D94 /* Pods-AppStoreV1.1.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -300,6 +302,7 @@
 				8B76E9E524C7A92900B600E9 /* ASImageView.swift in Sources */,
 				8B76E9E324C7A56300B600E9 /* ASLabel.swift in Sources */,
 				8B76E9E024C7948700B600E9 /* SearchResultCell.swift in Sources */,
+				8BDF526724CA3E8700610BFA /* BaseTabBarController.swift in Sources */,
 				8B2CE50924C903FB00D199F1 /* SearchResult.swift in Sources */,
 				8B76E9EC24C7DC9400B600E9 /* ASStackView.swift in Sources */,
 			);

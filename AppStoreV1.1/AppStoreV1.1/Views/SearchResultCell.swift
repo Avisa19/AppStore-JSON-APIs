@@ -18,12 +18,12 @@ class SearchResultCell: UICollectionViewCell {
             categoryLabel.text = appResult.primaryGenreName
             ratingLabel.text = "Rating: \(String(format: "%.1f", appResult.averageUserRating ?? 0))"
             guard let url = URL(string: appResult.artworkUrl100) else { return }
-            setImgageWithWebImage(url, appResult)
+            iconImageView.sd_setImage(with: url)
+            setImgageWithWebImage(appResult)
         }
     }
     
-    fileprivate func setImgageWithWebImage(_ url: URL, _ appResult: Result) {
-        iconImageView.sd_setImage(with: url)
+    fileprivate func setImgageWithWebImage(_ appResult: Result) {
         
         // Load screenShots
         screenShotOneImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[0]))
