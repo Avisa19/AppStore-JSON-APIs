@@ -22,6 +22,7 @@ class NetworkService {
             if let err = err {
                 completion(nil, err)
                 print("Error in fetching data:", err)
+                return
             }
             
             // success

@@ -15,6 +15,8 @@ class SearchResultCell: UICollectionViewCell {
             guard let appResult = appResult else { return }
             nameLabel.text = appResult.trackName
             categoryLabel.text = appResult.primaryGenreName
+            ratingLabel.text = "Rating: \(String(format: "%.1f", appResult.averageUserRating ?? 0))"
+            
         }
     }
     

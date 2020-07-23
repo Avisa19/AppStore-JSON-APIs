@@ -24,6 +24,9 @@ class AppSearchController: UICollectionViewController {
             }
             guard let appResults = results else { return }
             self.appResult = appResults
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
     }
     
