@@ -11,15 +11,26 @@ import SwiftUI
 class AppSearchController: UICollectionViewController {
     
     fileprivate let CELL_ID = "CellId"
+    
     fileprivate var appResult = [Result]()
+    
     fileprivate let searchBarController = UISearchController(searchResultsController: nil)
-
+    
+    fileprivate let enterSearchTermLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Please search term above..."
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         setupSearchBar()
+        
     }
     
     fileprivate func setupSearchBar() {
@@ -33,6 +44,10 @@ class AppSearchController: UICollectionViewController {
     fileprivate func setupViews() {
         collectionView.backgroundColor = UIColor.init(white: 0.5, alpha: 0.1)
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: CELL_ID)
+        // setup label
+        view.addSubview(enterSearchTermLabel)
+        enterSearchTermLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        enterSearchTermLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
   /*  fileprivate func fetchiTunesApp() {
@@ -82,6 +97,7 @@ extension AppSearchController: UICollectionViewDelegateFlowLayout {
 
 extension AppSearchController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
         NetworkService.shared.fetchiTunesApps(searchTerm: searchText) { (results, err) in
             if let err = err {
                 print("Error fetch data:", err)
@@ -92,6 +108,7 @@ extension AppSearchController: UISearchBarDelegate {
                 self.collectionView.reloadData()
             }
         }
+        
     }
 }
 
