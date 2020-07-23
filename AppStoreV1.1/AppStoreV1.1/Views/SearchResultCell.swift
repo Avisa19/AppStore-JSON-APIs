@@ -18,7 +18,21 @@ class SearchResultCell: UICollectionViewCell {
             categoryLabel.text = appResult.primaryGenreName
             ratingLabel.text = "Rating: \(String(format: "%.1f", appResult.averageUserRating ?? 0))"
             guard let url = URL(string: appResult.artworkUrl100) else { return }
-            iconImageView.sd_setImage(with: url)
+            setImgageWithWebImage(url, appResult)
+        }
+    }
+    
+    fileprivate func setImgageWithWebImage(_ url: URL, _ appResult: Result) {
+        iconImageView.sd_setImage(with: url)
+        
+        // Load screenShots
+        screenShotOneImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[0]))
+        
+        if appResult.screenshotUrls.count > 1 {
+            screenShotOneImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[1]))
+        }
+        if appResult.screenshotUrls.count > 2 {
+            screenShotOneImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[2]))
         }
     }
     
@@ -46,7 +60,11 @@ class SearchResultCell: UICollectionViewCell {
     // create screenShot
     func createScreenShotImageView() -> UIImageView {
         let imageView = UIImageView()
-        imageView.backgroundColor = .systemIndigo
+        imageView.layer.cornerRadius = 8
+        imageView.clipsToBounds = true
+        imageView.layer.borderWidth = 0.5
+        imageView.layer.borderColor = UIColor.init(white: 0.5, alpha: 0.2).cgColor
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }
     

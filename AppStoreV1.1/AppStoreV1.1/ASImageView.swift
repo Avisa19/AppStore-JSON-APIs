@@ -18,6 +18,7 @@ class ASImageView: UIImageView {
         self.widthAnchor.constraint(equalToConstant: width).isActive = true
         self.heightAnchor.constraint(equalToConstant: width).isActive = true
         self.layer.cornerRadius = cornerRadius
+        self.clipsToBounds = true
     }
     
     required init?(coder: NSCoder) {
