@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SDWebImage
 
 class SearchResultCell: UICollectionViewCell {
     
@@ -16,7 +17,8 @@ class SearchResultCell: UICollectionViewCell {
             nameLabel.text = appResult.trackName
             categoryLabel.text = appResult.primaryGenreName
             ratingLabel.text = "Rating: \(String(format: "%.1f", appResult.averageUserRating ?? 0))"
-            
+            guard let url = URL(string: appResult.artworkUrl100) else { return }
+            iconImageView.sd_setImage(with: url)
         }
     }
     
