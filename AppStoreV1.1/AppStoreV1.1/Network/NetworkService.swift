@@ -12,7 +12,7 @@ class NetworkService {
 
     static let shared = NetworkService()
     
-    func fetchiTunesApps() {
+    func fetchiTunesApps(completion: @escaping ([Result]?, Error?) -> () ) {
         let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
         
         guard let url = URL(string: urlString) else { return }
@@ -20,6 +20,7 @@ class NetworkService {
         // Fetch data
         let dataTask = URLSession.shared.dataTask(with: url) { (snapshot, response, err) in
             if let err = err {
+                completion(nil, err)
                 print("Error in fetching data:", err)
             }
             
@@ -27,7 +28,7 @@ class NetworkService {
             guard let snapshot = snapshot else { return }
             do {
             let jsonData = try JSONDecoder().decode(SearchResult.self, from: snapshot)
-                jsonData.results.forEach {print($0.trackName, $0.primaryGenreName)}
+                completion(jsonData.results, nil)
             } catch let jsonErr {
                 print("Error in decoding data to json:", jsonErr)
             }

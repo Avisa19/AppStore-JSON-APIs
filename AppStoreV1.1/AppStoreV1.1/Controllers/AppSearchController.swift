@@ -11,18 +11,25 @@ import SwiftUI
 class AppSearchController: UICollectionViewController {
     
     fileprivate let CELL_ID = "CellId"
+    fileprivate var appResult = [Result]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = UIColor.init(white: 0.5, alpha: 0.1)
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: CELL_ID)
         // Fetch Data from URL
-        NetworkService.shared.fetchiTunesApps()
+        NetworkService.shared.fetchiTunesApps { (results, err) in
+            if let err = err {
+                print("Error fetch data:", err)
+            }
+            guard let appResults = results else { return }
+            self.appResult = appResults
+        }
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        return appResult.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
