@@ -12,11 +12,28 @@ class AppSearchController: UICollectionViewController {
     
     fileprivate let CELL_ID = "CellId"
     fileprivate var appResult = [Result]()
+    fileprivate let searchBarController = UISearchController(searchResultsController: nil)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupViews()
+        setupSearchBar()
+        fetchiTunesApp()
+    }
+    
+    fileprivate func setupSearchBar() {
+        navigationItem.searchController = self.searchBarController
+        navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    
+    fileprivate func setupViews() {
         collectionView.backgroundColor = UIColor.init(white: 0.5, alpha: 0.1)
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: CELL_ID)
+    }
+    
+    fileprivate func fetchiTunesApp() {
         // Fetch Data from URL
         NetworkService.shared.fetchiTunesApps { (results, err) in
             if let err = err {
