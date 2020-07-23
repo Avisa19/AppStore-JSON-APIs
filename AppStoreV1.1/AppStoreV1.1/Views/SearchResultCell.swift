@@ -10,6 +10,14 @@ import SwiftUI
 
 class SearchResultCell: UICollectionViewCell {
     
+    var appResult: Result? {
+        didSet {
+            guard let appResult = appResult else { return }
+            nameLabel.text = appResult.trackName
+            categoryLabel.text = appResult.primaryGenreName
+        }
+    }
+    
     
     fileprivate let iconImageView = ASImageView()
     

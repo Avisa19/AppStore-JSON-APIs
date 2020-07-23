@@ -34,7 +34,7 @@ class AppSearchController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_ID, for: indexPath) as! SearchResultCell
-        
+        cell.appResult = appResult[indexPath.item]
         return cell
     }
     
