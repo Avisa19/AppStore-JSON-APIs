@@ -11,14 +11,30 @@ import SwiftUI
 class AppsGroupCell: UICollectionViewCell {
     
     fileprivate let sectionLabel = ASLabel(title: "App Section", textColor: .systemGray, size: 24, weight: .bold)
+    fileprivate let horizontalController = UIViewController()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        setupViews()
+    }
+    
+    fileprivate func setupViews() {
         backgroundColor = .white
         addSubview(sectionLabel)
+        
+        horizontalController.view.backgroundColor = .systemRed
+        addSubview(horizontalController.view)
+        horizontalController.view.translatesAutoresizingMaskIntoConstraints = false
+        
         sectionLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
         sectionLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         sectionLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        
+        horizontalController.view.topAnchor.constraint(equalTo: sectionLabel.bottomAnchor).isActive = true
+        horizontalController.view.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        horizontalController.view.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        horizontalController.view.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
     required init?(coder: NSCoder) {
