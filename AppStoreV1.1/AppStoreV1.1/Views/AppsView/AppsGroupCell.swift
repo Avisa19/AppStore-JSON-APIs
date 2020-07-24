@@ -11,7 +11,7 @@ import SwiftUI
 class AppsGroupCell: UICollectionViewCell {
     
     fileprivate let sectionLabel = ASLabel(title: "App Section", textColor: .systemGray, size: 24, weight: .bold)
-    fileprivate let horizontalController = UIViewController()
+    fileprivate let horizontalController = HorizontalAppsController()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
