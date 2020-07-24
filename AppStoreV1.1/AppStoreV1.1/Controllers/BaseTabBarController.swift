@@ -16,7 +16,7 @@ class BaseTabBarController: UITabBarController {
         
         viewControllers = [
             createItemBar(UIViewController(), with: "Today", with: #imageLiteral(resourceName: "today_icon")),
-            createItemBar(UIViewController(), with: "Apps", with: #imageLiteral(resourceName: "apps")),
+            createItemBar(AppsController(), with: "Apps", with: #imageLiteral(resourceName: "apps")),
             createItemBar(AppSearchController(), with: "Search", with:#imageLiteral(resourceName: "search"))
         ]
     }

@@ -23,6 +23,7 @@
 		8B76E9E724C7AC2E00B600E9 /* ASButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76E9E624C7AC2E00B600E9 /* ASButton.swift */; };
 		8B76E9EA24C7ADB900B600E9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76E9E924C7ADB900B600E9 /* Extensions.swift */; };
 		8B76E9EC24C7DC9400B600E9 /* ASStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76E9EB24C7DC9400B600E9 /* ASStackView.swift */; };
+		8BB9204424CB649700DEA614 /* AppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9204324CB649700DEA614 /* AppsController.swift */; };
 		8BDF526724CA3E8700610BFA /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF526624CA3E8700610BFA /* BaseTabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		8B76E9E624C7AC2E00B600E9 /* ASButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASButton.swift; sourceTree = "<group>"; };
 		8B76E9E924C7ADB900B600E9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8B76E9EB24C7DC9400B600E9 /* ASStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASStackView.swift; sourceTree = "<group>"; };
+		8BB9204324CB649700DEA614 /* AppsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsController.swift; sourceTree = "<group>"; };
 		8BDF526624CA3E8700610BFA /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		ECE49B275ACB6FC3B7559D94 /* Pods-AppStoreV1.1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreV1.1.release.xcconfig"; path = "Target Support Files/Pods-AppStoreV1.1/Pods-AppStoreV1.1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +129,7 @@
 		8B76E9DB24C78E4000B600E9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8BB9204324CB649700DEA614 /* AppsController.swift */,
 				8B76E9DC24C78EDC00B600E9 /* AppSearchController.swift */,
 				8BDF526624CA3E8700610BFA /* BaseTabBarController.swift */,
 			);
@@ -299,6 +302,7 @@
 				8B76E9CA24C76B1300B600E9 /* SceneDelegate.swift in Sources */,
 				8B76E9CC24C76B1300B600E9 /* ContentView.swift in Sources */,
 				8B76E9DD24C78EDC00B600E9 /* AppSearchController.swift in Sources */,
+				8BB9204424CB649700DEA614 /* AppsController.swift in Sources */,
 				8B76E9E524C7A92900B600E9 /* ASImageView.swift in Sources */,
 				8B76E9E324C7A56300B600E9 /* ASLabel.swift in Sources */,
 				8B76E9E024C7948700B600E9 /* SearchResultCell.swift in Sources */,
