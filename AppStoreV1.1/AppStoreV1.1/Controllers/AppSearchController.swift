@@ -66,6 +66,7 @@ class AppSearchController: UICollectionViewController {
     */
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        enterSearchTermLabel.isHidden = appResult.count != 0
         return appResult.count
     }
     
