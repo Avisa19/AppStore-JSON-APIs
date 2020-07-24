@@ -13,7 +13,7 @@ class HorizontalAppsController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .systemGreen
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: HORIZ_ID)
+        collectionView.register(AppsRowCell.self, forCellWithReuseIdentifier: HORIZ_ID)
         
     }
     
@@ -22,8 +22,7 @@ class HorizontalAppsController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HORIZ_ID, for: indexPath)
-        cell.backgroundColor = .systemBlue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HORIZ_ID, for: indexPath) as! AppsRowCell
         return cell
     }
     
