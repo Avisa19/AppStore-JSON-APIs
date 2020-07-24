@@ -133,10 +133,10 @@
 		8B76E9DB24C78E4000B600E9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8BABE0C324CB8823008503ED /* HorizontalApssController.swift */,
+				8BB9204324CB649700DEA614 /* AppsController.swift */,
 				8B76E9DC24C78EDC00B600E9 /* AppSearchController.swift */,
 				8BDF526624CA3E8700610BFA /* BaseTabBarController.swift */,
-				8BB9204324CB649700DEA614 /* AppsController.swift */,
-				8BABE0C324CB8823008503ED /* HorizontalApssController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
