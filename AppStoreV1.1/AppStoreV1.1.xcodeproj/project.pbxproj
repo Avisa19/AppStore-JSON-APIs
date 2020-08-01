@@ -27,6 +27,7 @@
 		8BABE0C424CB8823008503ED /* HorizontalApssController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BABE0C324CB8823008503ED /* HorizontalApssController.swift */; };
 		8BABE0C624CBA06B008503ED /* AppsRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BABE0C524CBA06B008503ED /* AppsRowCell.swift */; };
 		8BB9204424CB649700DEA614 /* AppsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9204324CB649700DEA614 /* AppsPageController.swift */; };
+		8BBA4B6024D5ED93009E8777 /* AppsPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBA4B5F24D5ED93009E8777 /* AppsPageHeader.swift */; };
 		8BDF526724CA3E8700610BFA /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF526624CA3E8700610BFA /* BaseTabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		8BABE0C324CB8823008503ED /* HorizontalApssController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalApssController.swift; sourceTree = "<group>"; };
 		8BABE0C524CBA06B008503ED /* AppsRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsRowCell.swift; sourceTree = "<group>"; };
 		8BB9204324CB649700DEA614 /* AppsPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageController.swift; sourceTree = "<group>"; };
+		8BBA4B5F24D5ED93009E8777 /* AppsPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageHeader.swift; sourceTree = "<group>"; };
 		8BDF526624CA3E8700610BFA /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		ECE49B275ACB6FC3B7559D94 /* Pods-AppStoreV1.1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreV1.1.release.xcconfig"; path = "Target Support Files/Pods-AppStoreV1.1/Pods-AppStoreV1.1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +186,7 @@
 			children = (
 				8BABE0C524CBA06B008503ED /* AppsRowCell.swift */,
 				8BABE0BF24CB7C2C008503ED /* AppsGroupCell.swift */,
+				8BBA4B5F24D5ED93009E8777 /* AppsPageHeader.swift */,
 			);
 			path = AppsView;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B2CE50524C8FCB100D199F1 /* NetworkService.swift in Sources */,
+				8BBA4B6024D5ED93009E8777 /* AppsPageHeader.swift in Sources */,
 				8B76E9C824C76B1300B600E9 /* AppDelegate.swift in Sources */,
 				8B76E9EA24C7ADB900B600E9 /* Extensions.swift in Sources */,
 				8B76E9E724C7AC2E00B600E9 /* ASButton.swift in Sources */,

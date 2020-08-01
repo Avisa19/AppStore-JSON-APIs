@@ -11,11 +11,13 @@ import SwiftUI
 class AppsPageController: UICollectionViewController {
     
     fileprivate let GROUP_ID = "Group_ID"
+    fileprivate let HEADER_ID = "Header_ID"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = UIColor.white
         collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: GROUP_ID)
+        collectionView.register(AppsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HEADER_ID)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -38,6 +40,18 @@ class AppsPageController: UICollectionViewController {
 }
 
 extension AppsPageController: UICollectionViewDelegateFlowLayout {
+    
+    // Header
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HEADER_ID, for: indexPath) as! AppsPageHeader
+        return header
+    }
+    
+    // Header size
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .init(width: view.frame.width, height: 200)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: collectionView.frame.width, height: 300)
     }
