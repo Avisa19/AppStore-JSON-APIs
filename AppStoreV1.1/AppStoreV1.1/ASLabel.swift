@@ -10,7 +10,7 @@ import SwiftUI
 
 class ASLabel: UILabel {
     
-    init(title: String = "Default text", frame: CGRect = .zero, textAlign: NSTextAlignment = .left, textColor: UIColor = .black, size: CGFloat = 14, weight: UIFont.Weight = .medium) {
+    init(title: String = "Default text", frame: CGRect = .zero, textAlign: NSTextAlignment = .left, textColor: UIColor = .black, size: CGFloat = 14, weight: UIFont.Weight = .regular) {
         super.init(frame: frame)
         checkIfFrameZero()
         self.text = title

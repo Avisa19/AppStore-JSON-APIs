@@ -23,12 +23,12 @@ class AppsGroupCell: UICollectionViewCell {
         backgroundColor = .white
         addSubview(sectionLabel)
         
-        horizontalController.view.backgroundColor = .systemRed
+        horizontalController.view.backgroundColor = UIColor.init(white: 0.5, alpha: 0.1)
         addSubview(horizontalController.view)
         horizontalController.view.translatesAutoresizingMaskIntoConstraints = false
         
-        sectionLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        sectionLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        sectionLabel.topAnchor.constraint(equalTo: topAnchor, constant: 18).isActive = true
+        sectionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         sectionLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
         horizontalController.view.topAnchor.constraint(equalTo: sectionLabel.bottomAnchor).isActive = true

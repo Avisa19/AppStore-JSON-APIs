@@ -26,7 +26,7 @@
 		8BABE0C024CB7C2C008503ED /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BABE0BF24CB7C2C008503ED /* AppsGroupCell.swift */; };
 		8BABE0C424CB8823008503ED /* HorizontalApssController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BABE0C324CB8823008503ED /* HorizontalApssController.swift */; };
 		8BABE0C624CBA06B008503ED /* AppsRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BABE0C524CBA06B008503ED /* AppsRowCell.swift */; };
-		8BB9204424CB649700DEA614 /* AppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9204324CB649700DEA614 /* AppsController.swift */; };
+		8BB9204424CB649700DEA614 /* AppsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9204324CB649700DEA614 /* AppsPageController.swift */; };
 		8BDF526724CA3E8700610BFA /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF526624CA3E8700610BFA /* BaseTabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,7 @@
 		8BABE0BF24CB7C2C008503ED /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		8BABE0C324CB8823008503ED /* HorizontalApssController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalApssController.swift; sourceTree = "<group>"; };
 		8BABE0C524CBA06B008503ED /* AppsRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsRowCell.swift; sourceTree = "<group>"; };
-		8BB9204324CB649700DEA614 /* AppsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsController.swift; sourceTree = "<group>"; };
+		8BB9204324CB649700DEA614 /* AppsPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageController.swift; sourceTree = "<group>"; };
 		8BDF526624CA3E8700610BFA /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		ECE49B275ACB6FC3B7559D94 /* Pods-AppStoreV1.1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreV1.1.release.xcconfig"; path = "Target Support Files/Pods-AppStoreV1.1/Pods-AppStoreV1.1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				8BABE0C324CB8823008503ED /* HorizontalApssController.swift */,
-				8BB9204324CB649700DEA614 /* AppsController.swift */,
+				8BB9204324CB649700DEA614 /* AppsPageController.swift */,
 				8B76E9DC24C78EDC00B600E9 /* AppSearchController.swift */,
 				8BDF526624CA3E8700610BFA /* BaseTabBarController.swift */,
 			);
@@ -328,7 +328,7 @@
 				8B76E9CA24C76B1300B600E9 /* SceneDelegate.swift in Sources */,
 				8B76E9CC24C76B1300B600E9 /* ContentView.swift in Sources */,
 				8B76E9DD24C78EDC00B600E9 /* AppSearchController.swift in Sources */,
-				8BB9204424CB649700DEA614 /* AppsController.swift in Sources */,
+				8BB9204424CB649700DEA614 /* AppsPageController.swift in Sources */,
 				8B76E9E524C7A92900B600E9 /* ASImageView.swift in Sources */,
 				8B76E9E324C7A56300B600E9 /* ASLabel.swift in Sources */,
 				8B76E9E024C7948700B600E9 /* SearchResultCell.swift in Sources */,

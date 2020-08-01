@@ -12,7 +12,7 @@ class HorizontalAppsController: UICollectionViewController {
     fileprivate let HORIZ_ID = "Horizontal_Id"
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = .systemGreen
+        collectionView.backgroundColor = .white
         collectionView.register(AppsRowCell.self, forCellWithReuseIdentifier: HORIZ_ID)
         
     }
@@ -52,6 +52,7 @@ extension HorizontalAppsController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: topBottomPadding, left: 16, bottom: topBottomPadding, right: 16)
     }
+   
 }
 
 struct HorizontalApssController_Previews: PreviewProvider {
